@@ -6,6 +6,7 @@
    <UUID>64535035-281b-4735-9ed1-58107091ca18</UUID>
    <migratedVersion>5.9.0</migratedVersion>
    <pageLoadTimeout>0</pageLoadTimeout>
+   <projectFileLocation>D:\Programming\Katalon\FastSocial\FastSocial.prj</projectFileLocation>
    <sourceContent>
       <sourceFolderList>
          <sourceFolderConfiguration>
