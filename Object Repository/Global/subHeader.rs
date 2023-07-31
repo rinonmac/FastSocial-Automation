@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>subHeader</name>
+   <tag></tag>
+   <elementGuidId>1d3e029f-10f7-490a-a923-a767105f7b7c</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//p[@class='desc']</value>
+      </entry>
+      <entry>
+         <key>BASIC</key>
+         <value></value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <type>Main</type>
+      <value>//p[@class='desc']</value>
+      <webElementGuid>0a1ea355-995c-4d57-bc37-3e9e5340c162</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>
