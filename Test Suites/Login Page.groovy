@@ -55,9 +55,9 @@ def setupTestCase() {
 /**
  * Run after each test case ends.
  */
-@TearDownTestCase(skipped = true) // Please change skipped to be false to activate this method.
+@TearDownTestCase(skipped = false) // Please change skipped to be false to activate this method.
 def tearDownTestCase() {
-	// Put your code here.
+	WebUI.closeBrowser()
 }
 
 /**

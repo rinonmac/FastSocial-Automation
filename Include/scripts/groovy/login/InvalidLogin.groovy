@@ -4,8 +4,6 @@ import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
-import javax.xml.bind.annotation.XmlElementDecl.GLOBAL
-
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
 import com.kms.katalon.core.checkpoint.CheckpointFactory
@@ -19,7 +17,6 @@ import com.kms.katalon.core.testobject.ObjectRepository
 import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-import com.kms.katalon.core.webui.keyword.internal.WebUIAbstractKeyword
 
 import internal.GlobalVariable
 
@@ -47,38 +44,27 @@ import cucumber.api.java.en.When
 
 
 
-class ValidLogin {
-	@Given("User is on login page")
-	def openbrowser() {
-		WebUI.openBrowser(null)
-		WebUI.setViewPortSize(1600, 900)
-		WebUI.navigateToUrl(GlobalVariable.url)
-		println("Opened Fast Social Website")
+class InvalidLogin {
+	@Given("User has invalid user account")
+	def given_invalid_creditentials() {
+		println("Invalid User")
 	}
 
-	@Given("User has valid user account")
-	def print_username_and_password() {
-		println("Username: " +GlobalVariable.username)
-		println("Password: " +GlobalVariable.password)
-	}
-
-	@When("User is typing valid username and password on login form")
-	def type_username_and_password() {
+	@When("User is typing invalid (.*) and (.*) on login form")
+	def input_wrong_username_and_password(String username, String password) {
 		WebUI.click(findTestObject('Object Repository/Login Page/acceptCookies'))
-		WebUI.setText(findTestObject('Login Page/usernameForm'), GlobalVariable.username)
-		WebUI.setText(findTestObject('Object Repository/Login Page/passwordForm'), GlobalVariable.password)
+		println("Typing : " +username)
+		WebUI.setText(findTestObject('Object Repository/Login Page/usernameForm'), username)
+		println("Typing : " +password)
+		WebUI.setText(findTestObject('Object Repository/Login Page/passwordForm'), password)
+		println("Uncheck remember device")
 		WebUI.click(findTestObject('Object Repository/Login Page/rememberCheck'))
 	}
-	@And("User click login")
-	def click_login() {
-		WebUI.click(findTestObject('Object Repository/Login Page/loginButton'))
-		println("Clicked login button")
-	}
 
-	@Then("Redirect to homepage")
-	def success_login() {
-		WebUI.verifyElementText(findTestObject('Object Repository/Login Page/successLogin'), "Selamat datang kembali!")
-		WebUI.verifyElementPresent(findTestObject('Object Repository/Home Page/profileTab'), 0)
-		WebUI.takeScreenshot('Screenshots/validLogin.png')
+	@Then("Display error (.*)")
+	def display_error(String message) {
+		WebUI.verifyElementText(findTestObject('Object Repository/Login Page/failedLogin'), message)
+		println ("Displayed error message : " +message)
+		WebUI.takeScreenshot('Screenshots/InvalidLogin.png')
 	}
 }
