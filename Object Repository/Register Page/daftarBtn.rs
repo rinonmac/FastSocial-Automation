@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>daftarBtn</name>
+   <tag></tag>
+   <elementGuidId>cbb950c1-0506-4f9b-80d0-44de468194a3</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//a[normalize-space()='Daftar']</value>
+      </entry>
+      <entry>
+         <key>BASIC</key>
+         <value></value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <type>Main</type>
+      <value>//a[normalize-space()='Daftar']</value>
+      <webElementGuid>8b1685de-7cdf-475d-945d-74dc3274d5e2</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>genderForm</name>
+   <tag></tag>
+   <elementGuidId>04fb73d9-d3f6-4bd8-8b36-882615fb365e</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//select[@id='gender']</value>
+      </entry>
+      <entry>
+         <key>BASIC</key>
+         <value></value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <type>Main</type>
+      <value>//select[@id='gender']</value>
+      <webElementGuid>d67fa3f0-4b11-4e12-9897-7dae997e77c3</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

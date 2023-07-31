@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>acceptTermsCheck</name>
+   <tag></tag>
+   <elementGuidId>5050e7ac-b19a-4d42-9b6d-f174bbf047d0</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//input[@id='accept_terms']</value>
+      </entry>
+      <entry>
+         <key>BASIC</key>
+         <value></value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <type>Main</type>
+      <value>//input[@id='accept_terms']</value>
+      <webElementGuid>989ec889-bf6d-4573-935c-c77e9324a04b</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>
