@@ -1,10 +1,10 @@
 {
-  "keywordFileContentHash": "2C66FF8369AA5C76F1A2FF56C071E07F",
+  "keywordFileContentHash": "DB6796826983FAE7E4C3A24A1E7A6FF1",
   "keywordClasses": [
     {
       "name": "login.ValidLogin",
       "keywordMethods": []
     }
   ],
-  "javadocParsed": false
+  "javadocParsed": true
 }
