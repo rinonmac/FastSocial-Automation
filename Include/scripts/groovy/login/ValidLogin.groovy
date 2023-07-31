@@ -4,6 +4,8 @@ import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
+import javax.xml.bind.annotation.XmlElementDecl.GLOBAL
+
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
 import com.kms.katalon.core.checkpoint.CheckpointFactory
@@ -46,51 +48,37 @@ import cucumber.api.java.en.When
 
 
 class ValidLogin {
-	/**
-	 * The step definitions below match with Katalon sample Gherkin steps
-	 */
 	@Given("User is on login page")
 	def openbrowser() {
 		WebUI.openBrowser(null)
 		WebUI.setViewPortSize(1600, 900)
 		WebUI.navigateToUrl(GlobalVariable.url)
+		println("Opened Fast Social Website")
 	}
 
-	@When("User is typing (.*) and (.*) on login form")
-	def type_username(String username, String password) {
+	@Given("User has valid user account")
+	def print_username_and_password() {
+		println("Username: " +GlobalVariable.username)
+		println("Password: " +GlobalVariable.password)
+	}
+
+	@When("User is typing valid username and password on login form")
+	def type_username_and_password() {
 		WebUI.click(findTestObject('Object Repository/Login Page/acceptCookies'))
 		WebUI.setText(findTestObject('Login Page/usernameForm'), GlobalVariable.username)
-		println ("Username : " +username)
-		//		WebUI.setText(findTestObject('Login Page/usernameForm'), username)
-		//		WebUI.delay(2)
-		println("Password : " +password)
-		//		WebUI.setText(findTestObject('Object Repository/Login Page/passwordForm'), password)
 		WebUI.setText(findTestObject('Object Repository/Login Page/passwordForm'), GlobalVariable.password)
-		//		WebUI.delay(2);
-		WebUI.uncheck(findTestObject('Object Repository/Login Page/rememberCheck'))
-		//		WebUI.delay(2)
+		WebUI.click(findTestObject('Object Repository/Login Page/rememberCheck'))
 	}
-	//	def type_password(String password) {
-	//		WebUI.setEncryptedText(findTestObject('Object Repository/Login Page/passwordForm'), GlobalVariable.password)
-	//		println("Password : " +password)
-	//		WebUI.setEncryptedText(findTestObject('Object Repository/Login Page/passwordForm'), password)
-	//		WebUI.delay(2);
-	//	}
-	//	def untick_remember_device() {
-	//		WebUI.uncheck(findTestObject('Object Repository/Login Page/rememberCheck'))
-	//		WebUI.delay(2)
-	//	}
-
 	@And("User click login")
 	def click_login() {
 		WebUI.click(findTestObject('Object Repository/Login Page/loginButton'))
-		WebUI.verifyElementText(findTestObject('Object Repository/Login Page/successLogin'), "Selamat datang kembali!")
+		println("Clicked login button")
 	}
 
 	@Then("Redirect to homepage")
 	def success_login() {
+		WebUI.verifyElementText(findTestObject('Object Repository/Login Page/successLogin'), "Selamat datang kembali!")
 		WebUI.verifyElementPresent(findTestObject('Object Repository/Home Page/profileTab'), 0)
 		WebUI.takeScreenshot('Screenshots/validLogin.png')
-		WebUI.closeBrowser()
 	}
 }
